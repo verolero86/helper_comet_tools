@@ -1,0 +1,10 @@
+README
+------
+
+
+python3 preprocess_leaves.py --csvfile ../../spectra/102.csv --leafid 102
+
+$ jsrun --nrs 6 --gpu_per_rs 1 --tasks_per_rs 1 --cpu_per_rs 7 /gpfs/alpine/syb105/proj-shared/Personal/vmv/histograms/install_single_release_summit/bin/genomics_metric --num_way 2 --metric_type czekanowski --sparse yes --num_vector 10 --num_field 203 --all2all yes --compute_method GPU --num_proc_vector 6 --num_proc_field 1 --num_proc_repl 1 --tc 0 --num_tc_steps 1 --num_phase 1 --num_stage 1 --verbosity 1 --checksum no --phase_min 0 --phase_max 0 --stage_min 0 --stage_max 0 --input_file  ./vectors_102.tsv --output_file_stub out_102
+ctime 0.014539 ops 5.115600e+04 ops_rate 3.518536e+06 ops_rate/proc 5.864226e+05 vcmp 6.600000e+01 vacmp 4.500000e+01 vcmpout 4.500000e+01 cmp 1.339800e+04 acmp 9.135000e+03 ecmp 1.339800e+04 eacmp 9.135000e+03 ecmp_rate 9.215212e+05 ecmp_rate/proc 1.535869e+05 ment 6.600000e+01 mentc 6.600000e+01 vctime 0.002811 mctime 0.002386 intime 0.000275 outtime 0.026614 cpumem 6.712000e+03 gpumem 4.932000e+03 tottime 0.045034 prec single build release
+
+

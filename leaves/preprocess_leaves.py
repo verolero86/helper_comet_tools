@@ -37,6 +37,8 @@ def read_leaf(fname):
     vec_values = values.transpose()
     print(f"vec_values.shape = {vec_values.shape}")
     print(f"vec_values = {vec_values}")
+    
+    return vec_values
 
 
 # Main program
@@ -45,11 +47,16 @@ if __name__ == "__main__":
 
     # Parse arguments
     parser = argparse.ArgumentParser(description='Preprocess leaf spectra data for CoMet.')
-    parser.add_argument('--csvfile', required=True, help="The combined CSV file of all Bioclim data.")
+    parser.add_argument('--csvfile', required=True, help="The combined CSV file of a leaf spectra data.")
+    parser.add_argument('--leafid', required=True, help="The unique ID for a single leaf.")
     args = parser.parse_args()
     #print(args)
 
     # Store arguments
     csvfile = args.csvfile
+    leafid = args.leafid
 
-    read_leaf(csvfile)
+    vectors = read_leaf(csvfile)
+
+    np.savetxt(fname="vectors_"+leafid+".tsv",X=vectors,delimiter="\t",fmt='%s')
+
